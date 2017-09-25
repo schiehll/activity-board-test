@@ -1,0 +1,74 @@
+{
+  "name": "activity-board",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack-dev-server --hot",
+    "lint": "standard --fix",
+    "test": "npm run lint && jest --coverage --no-cache",
+    "test:watch": "npm run lint && jest --watch --coverage --no-cache",
+    "precommit": "npm run test"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
+    "jest-cli": "^21.1.0",
+    "standard": "^10.0.3",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
+      "stage-2",
+      "react"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "beforeEach",
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "jest"
+    ],
+    "ignore": [
+      "public"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/public/"
+    ],
+    "modulePaths": [
+      "src"
+    ]
+  }
+}
