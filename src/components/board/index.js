@@ -1,8 +1,8 @@
 import React from 'react'
-import { getLast12Months } from 'utils/months'
+import { getBoardDates } from 'utils/dates'
 
 const Board = () => {
-  console.log('months', getLast12Months())
+  console.log('dates', getBoardDates())
 
   return (
     <div>Boards</div>
