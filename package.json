@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server --hot",
+    "dev": "webpack-dev-server --hot",
+    "start": "node server",
     "lint": "standard --fix",
     "test": "npm run lint && jest --coverage --no-cache",
     "test:watch": "npm run lint && jest --watch --coverage --no-cache --onlyChanged",
-    "precommit": "npm run test"
+    "precommit": "npm run test",
+    "deploy": "now"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -18,11 +20,13 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.15.5",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
     "jest-cli": "^21.1.0",
     "jest-styled-components": "^4.6.0",
     "json-loader": "^0.5.7",
+    "now": "^8.3.7",
     "standard": "^10.0.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
