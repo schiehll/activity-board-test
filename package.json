@@ -21,6 +21,7 @@
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
     "jest-cli": "^21.1.0",
+    "json-loader": "^0.5.7",
     "standard": "^10.0.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"

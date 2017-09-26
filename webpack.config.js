@@ -13,7 +13,8 @@ module.exports = {
       'date-fns/each_day',
       'date-fns/last_day_of_month',
       'date-fns/add_days',
-      'date-fns/compare_asc'
+      'date-fns/compare_asc',
+      'date-fns/is_same_day'
     ],
     app: path.resolve(__dirname, 'src/index.js')
   },
@@ -38,6 +39,11 @@ module.exports = {
         test: /\.js?/,
         include: [path.resolve(__dirname, 'src')],
         loader: 'babel-loader'
+      },
+      {
+        test: /\.json?/,
+        include: [path.resolve(__dirname, 'src')],
+        loader: 'json-loader'
       }
     ]
   },

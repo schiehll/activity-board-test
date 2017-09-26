@@ -3,6 +3,7 @@ import eachDay from 'date-fns/each_day'
 import lastDayOfMonth from 'date-fns/last_day_of_month'
 import addDays from 'date-fns/add_days'
 import compareAsc from 'date-fns/compare_asc'
+import format from 'date-fns/format'
 
 export const monthNames = [
   'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dec'
@@ -57,5 +58,26 @@ export const getBoardDates = () => {
   const startDate = getBoardStartDate(dayOfWeek, months[0])
   const endDate = lastDayOfMonth(new Date(`${yearNumber}/${currentMonth}/01`))
 
-  return eachDay(startDate, addDays(endDate, 1)).sort(compareAsc)
+  return eachDay(startDate, addDays(endDate, 1))
+    .sort(compareAsc)
+    .map(date => format(date, 'YYYY-MM-DD'))
+}
+
+export const getBoardDatesPerWeek = () => {
+  let counter = 0
+  return getBoardDates().reduce((weeks, date, index) => {
+    if (index % 7 === 0 || index === 0) {
+      if (index !== 0) counter++
+
+      return {
+        ...weeks,
+        [counter]: [date]
+      }
+    }
+
+    return {
+      ...weeks,
+      [counter]: weeks[counter].concat(date)
+    }
+  }, {})
 }
