@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Months should render as expected 1`] = `
+<div
+  className="sc-bwzfXH iBbYAc"
+>
+  <span>
+    oct
+  </span>
+  <span>
+    nov
+  </span>
+  <span>
+    dec
+  </span>
+  <span>
+    jan
+  </span>
+  <span>
+    feb
+  </span>
+  <span>
+    mar
+  </span>
+  <span>
+    apr
+  </span>
+  <span>
+    may
+  </span>
+  <span>
+    jun
+  </span>
+  <span>
+    jul
+  </span>
+  <span>
+    ago
+  </span>
+  <span>
+    sep
+  </span>
+</div>
+`;

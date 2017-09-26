@@ -36,14 +36,14 @@ export const getYearNumber = monthName => {
 
 export const getDayOfWeekFromFirstDayOfTheMonth = (monthName, date = null) => {
   const dayOfWeekNumber = date ? date.getDay() + 1 : new Date(
-    `${getYearNumber(monthName)}/${getMonthNumber(monthName)}/01`
+    `${getYearNumber(monthName)}-${getMonthNumber(monthName)}-01`
   ).getDay() + 1
 
   return getDayOfWeekName(dayOfWeekNumber)
 }
 
 export const getBoardStartDate = (dayOfWeekName, monthName) => {
-  const referenceDay = new Date(`${getYearNumber(monthName)}/${getMonthNumber(monthName)}/01`)
+  const referenceDay = new Date(`${getYearNumber(monthName)}-${getMonthNumber(monthName)}-01`)
   const dayOfWeekNumber = getDayOfWeekNumber(dayOfWeekName)
   const remainingDays = daysOfWeekNames.slice(0, dayOfWeekNumber - 1)
 
@@ -56,7 +56,7 @@ export const getBoardDates = () => {
   const yearNumber = getYearNumber(currentMonth)
   const dayOfWeek = getDayOfWeekFromFirstDayOfTheMonth(months[0])
   const startDate = getBoardStartDate(dayOfWeek, months[0])
-  const endDate = lastDayOfMonth(new Date(`${yearNumber}/${currentMonth}/01`))
+  const endDate = lastDayOfMonth(new Date(`${yearNumber}-${currentMonth}-01`))
 
   return eachDay(startDate, addDays(endDate, 1))
     .sort(compareAsc)

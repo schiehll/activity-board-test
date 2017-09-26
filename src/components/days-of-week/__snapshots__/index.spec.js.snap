@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DaysOfWeek should render as expected 1`] = `
+<div
+  className="sc-bwzfXH bwZAkW"
+>
+  <span>
+    mon
+  </span>
+  <span>
+    wed
+  </span>
+  <span>
+    fri
+  </span>
+</div>
+`;

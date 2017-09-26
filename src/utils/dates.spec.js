@@ -4,7 +4,8 @@ import {
   monthNames,
   getLast12Months,
   getYearNumber,
-  getBoardDates
+  getBoardDates,
+  getBoardDatesPerWeek
 } from './dates'
 
 describe('dates', () => {
@@ -43,6 +44,16 @@ describe('dates', () => {
 
       expect(boardDates.length).toBe(371)
       expect(isSameDay(boardDates[370], lastDate)).toBe(true)
+    })
+  })
+
+  describe('getBoardDatesPerWeek', () => {
+    it('should return an object with array of dates by weeks', () => {
+      const boardDates = getBoardDatesPerWeek()
+
+      expect(Object.keys(boardDates).length).toBe(53)
+      expect(boardDates[0].length).toBe(7)
+      expect(boardDates[52].length).toBe(7)
     })
   })
 })

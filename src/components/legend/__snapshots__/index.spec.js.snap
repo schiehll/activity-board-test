@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Legend should render as expected 1`] = `
+<ul
+  className="sc-ifAKCX gUfnWU"
+>
+  <div
+    className="sc-bZQynM gGPWev"
+  >
+    Less
+  </div>
+  <li
+    className="sc-EHOje cYSFWv"
+    color="#ebedf0"
+  />
+  <li
+    className="sc-EHOje hGMkQd"
+    color="#c6e48b"
+  />
+  <li
+    className="sc-EHOje jUPQpM"
+    color="#7bc96f"
+  />
+  <li
+    className="sc-EHOje gdoxPC"
+    color="#239a3b"
+  />
+  <li
+    className="sc-EHOje bFqLjS"
+    color="#196127"
+  />
+  <div
+    className="sc-bZQynM gGPWev"
+  >
+    More
+  </div>
+</ul>
+`;
