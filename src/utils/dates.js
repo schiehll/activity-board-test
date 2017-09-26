@@ -33,8 +33,8 @@ export const getYearNumber = monthName => {
   return monthNumber > today.getMonth() + 1 ? today.getFullYear() - 1 : today.getFullYear()
 }
 
-export const getDayOfWeekFromFirstDayOfTheMonth = monthName => {
-  const dayOfWeekNumber = new Date(
+export const getDayOfWeekFromFirstDayOfTheMonth = (monthName, date = null) => {
+  const dayOfWeekNumber = date ? date.getDay() + 1 : new Date(
     `${getYearNumber(monthName)}/${getMonthNumber(monthName)}/01`
   ).getDay() + 1
 

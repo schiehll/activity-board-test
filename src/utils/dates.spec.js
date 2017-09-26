@@ -1,4 +1,11 @@
-import { monthNames, getLast12Months } from './dates'
+import lastDayOfMonth from 'date-fns/last_day_of_month'
+import isSameDay from 'date-fns/is_same_day'
+import {
+  monthNames,
+  getLast12Months,
+  getYearNumber,
+  getBoardDates
+} from './dates'
 
 describe('dates', () => {
   describe('getLast12Months', () => {
@@ -14,6 +21,28 @@ describe('dates', () => {
 
       expect(months.length).toBe(12)
       expect(months[11]).toBe(monthNames[currentMounth])
+    })
+  })
+
+  describe('getYearNumber', () => {
+    it('should return the year of the given month using the current month as reference', () => {
+      const currentYear = new Date().getFullYear()
+      let yearNumber = getYearNumber('jul')
+
+      expect(yearNumber).toBe(currentYear)
+
+      yearNumber = getYearNumber('dec')
+      expect(yearNumber).toBe(currentYear - 1)
+    })
+  })
+
+  describe('getBoardDates', () => {
+    it('should return an array of dates for the board using the current date as reference', () => {
+      const boardDates = getBoardDates()
+      const lastDate = lastDayOfMonth(new Date())
+
+      expect(boardDates.length).toBe(371)
+      expect(isSameDay(boardDates[370], lastDate)).toBe(true)
     })
   })
 })

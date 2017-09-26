@@ -8,7 +8,12 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
-      'styled-components'
+      'styled-components',
+      'date-fns/sub_days',
+      'date-fns/each_day',
+      'date-fns/last_day_of_month',
+      'date-fns/add_days',
+      'date-fns/compare_asc'
     ],
     app: path.resolve(__dirname, 'src/index.js')
   },
